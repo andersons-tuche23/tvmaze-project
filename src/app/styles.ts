@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   padding: 20px;
-  background-color: #141414; 
+  background-color: #141414;
   color: #fff;
 `;
 
@@ -17,7 +17,7 @@ export const Title = styled.h1`
 
 export const ShowsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
   padding: 0 10px;
 `;
@@ -31,10 +31,9 @@ export const ShowCard = styled.div`
   transition: transform 0.3s ease-in-out;
 
   &:hover {
-    transform: scale(1.05);  
+    transform: scale(1.05);
   }
 `;
-
 
 export const ShowImage = styled.img`
   width: 100%;
@@ -42,7 +41,7 @@ export const ShowImage = styled.img`
   object-fit: cover;
 
   @media (max-width: 768px) {
-    height: auto; 
+    height: auto;
   }
 `;
 
@@ -57,7 +56,7 @@ export const ShowName = styled.h3`
   transition: color 0.3s ease;
 
   &:hover {
-    color: #e50914; 
+    color: #e50914;
   }
 
   &::after {
@@ -68,11 +67,11 @@ export const ShowName = styled.h3`
     width: 0;
     height: 2px;
     background-color: #e50914;
-    transition: width 0.3s ease; 
+    transition: width 0.3s ease;
   }
 
   &:hover::after {
-    width: 100%; 
+    width: 100%;
   }
 `;
 
@@ -102,7 +101,7 @@ export const Button = styled.button`
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: #b20710; 
+    background-color: #b20710;
   }
 
   &:disabled {
@@ -112,11 +111,17 @@ export const Button = styled.button`
 `;
 
 export const LinkStyled = styled(Link)`
-  text-decoration: none; 
-  color: inherit; 
+  text-decoration: none;
+  color: inherit;
   transition: color 0.3s ease;
 
   &:hover {
-    color: #e50914; 
+    color: #e50914;
   }
 `;
+
+export const PageNumberText = styled.span`
+  margin: 0 10px;
+  white-space: nowrap;
+`;
+

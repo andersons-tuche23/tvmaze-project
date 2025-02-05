@@ -97,8 +97,17 @@ export const AdditionalInfo = styled.div`
   }
 `;
 
+export const ButtonContainer = styled.div`
+  display: flex;
+  gap: 15px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
+`;
+
 export const LinkButton = styled.a`
-  display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
   background-color: #e50914;

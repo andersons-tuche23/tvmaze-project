@@ -12,6 +12,7 @@ import {
   PaginationContainer,
   Button,
   LinkStyled,
+  PageNumberText, 
 } from "./styles";
 
 interface Show {
@@ -21,37 +22,48 @@ interface Show {
   rating: { average: number };
 }
 
-const ITEMS_PER_PAGE = 20;
+const ITEMS_PER_PAGE = 24;
 
 export default function Home() {
   const [shows, setShows] = useState<Show[]>([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(0);
+  const [currentPage, setCurrentPage] = useState<number>(1);
   const [error, setError] = useState<string | null>(null);
 
-  console.log(shows, "vfdsvdxvfdsvfdvfsd");
-
   useEffect(() => {
+    const savedPage = localStorage.getItem("currentPage");
+    if (savedPage) {
+      setCurrentPage(Number(savedPage));
+    }
+
     axios
-      .get(
-        `https://api.tvmaze.com/shows?page=${currentPage}&limit=${ITEMS_PER_PAGE}`
-      )
+      .get("https://api.tvmaze.com/shows")
       .then((response) => {
         setShows(response.data);
-        setTotalPages(Math.ceil(250 / ITEMS_PER_PAGE));
       })
       .catch((error) => {
         setError(error.message);
         console.error("Erro ao buscar séries:", error);
       });
-  }, [currentPage]);
+  }, []);
+
+  const totalPages = Math.ceil(shows.length / ITEMS_PER_PAGE);
+
+  const displayedShows = shows.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  );
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    localStorage.setItem("currentPage", page.toString());
+  };
 
   return (
     <Container>
       <Title>🎬 Séries Recomendadas</Title>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <ShowsGrid>
-        {shows.map((show) => (
+        {displayedShows.map((show) => (
           <ShowCard key={show.id}>
             <LinkStyled href={`/shows/${show.id}`}>
               <ShowImage src={show.image?.medium} alt={show.name} />
@@ -64,20 +76,16 @@ export default function Home() {
 
       <PaginationContainer>
         <Button
-          onClick={() =>
-            setCurrentPage((prevPage) => Math.max(prevPage - 1, 1))
-          }
+          onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
           disabled={currentPage === 1}
         >
           Anterior
         </Button>
-        <span style={{ margin: "0 10px" }}>
+        <PageNumberText>
           Página {currentPage} de {totalPages}
-        </span>
+        </PageNumberText>
         <Button
-          onClick={() =>
-            setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages))
-          }
+          onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))}
           disabled={currentPage === totalPages}
         >
           Próxima

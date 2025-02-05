@@ -15,6 +15,7 @@ import {
   FollowText,
   AdditionalInfo,
   LinkButton,
+  ButtonContainer,
 } from "./styles";
 
 interface ShowDetail {
@@ -80,15 +81,25 @@ export default function ShowDetailPage() {
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  marginTop: "20px",
+                  marginTop: "15px",
                 }}
               >
                 <HeartIcon />
                 <FollowText>Follow</FollowText>
               </div>
-              <LinkButton href={show.url} target="_blank">
-                Visitar Página Oficial
-              </LinkButton>
+              <ButtonContainer>
+                <LinkButton href={show.url} target="_blank">
+                  Visitar Página Oficial
+                </LinkButton>
+                <LinkButton
+                  href={`https://www.youtube.com/results?search_query=${encodeURIComponent(
+                    show.name + " trailer"
+                  )}`}
+                  target="_blank"
+                >
+                  🎬 Ver Trailer no YouTube
+                </LinkButton>
+              </ButtonContainer>
             </div>
           </InfoContainer>
         </>
