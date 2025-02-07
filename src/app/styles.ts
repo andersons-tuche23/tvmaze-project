@@ -5,6 +5,7 @@ export const Container = styled.div`
   padding: 20px;
   background-color: #141414;
   color: #fff;
+  min-height: 100vh;
 `;
 
 export const Title = styled.h1`
@@ -16,6 +17,7 @@ export const Title = styled.h1`
 `;
 
 export const ShowsGrid = styled.div`
+ flex-grow: 1;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
@@ -34,7 +36,6 @@ export const ShowCard = styled.div`
     transform: scale(1.05);
   }
 `;
-
 export const ShowImage = styled.img`
   width: 100%;
   height: 300px;
@@ -124,4 +125,33 @@ export const PageNumberText = styled.span`
   margin: 0 10px;
   white-space: nowrap;
 `;
+
+export const SearchInput = styled.input`
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    border-color: #e50914;
+  }
+`;
+export const SearchContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
 

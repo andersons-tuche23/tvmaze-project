@@ -132,3 +132,18 @@ export const ErrorMessage = styled.div`
   max-width: 500px;
 `;
 
+export const BackButton = styled.button`
+  background-color: #e50914;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  &:hover {
+    background-color: #b20710;
+  }
+`;
+
+
