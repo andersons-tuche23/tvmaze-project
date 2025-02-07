@@ -28,10 +28,7 @@ const Footer: React.FC = () => {
         </SocialContainer>
       </FooterContent>
       <Copyright>
-        <p>
-          &copy; {new Date().getFullYear()} Séries Recomendadas. Todos os
-          direitos reservados.
-        </p>
+        <p>&copy; 2025 Séries Recomendadas. Todos os direitos reservados.</p>
       </Copyright>
     </FooterContainer>
   );

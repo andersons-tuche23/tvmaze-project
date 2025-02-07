@@ -17,7 +17,7 @@ export const Title = styled.h1`
 `;
 
 export const ShowsGrid = styled.div`
- flex-grow: 1;
+  flex-grow: 1;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
@@ -153,5 +153,3 @@ export const SearchContainer = styled.div`
     flex-direction: column;
   }
 `;
-
-

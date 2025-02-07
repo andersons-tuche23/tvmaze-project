@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams, useRouter } from "next/navigation"; 
+import { useParams, useRouter } from "next/navigation";
 import {
   Container,
   Title,
@@ -16,7 +16,6 @@ import {
   AdditionalInfo,
   LinkButton,
   ButtonContainer,
-  BackButton, 
 } from "./styles";
 import Footer from "@/app/components/Footer";
 
@@ -58,8 +57,7 @@ export default function ShowDetailPage() {
     <Container>
       {show ? (
         <>
-        <BackButton onClick={() => router.push("/")}>Voltar para Home</BackButton>
-          <Title>{show.name}</Title>
+          <Title onClick={() => router.push("/")}>{show.name}</Title>
           <InfoContainer>
             <ShowImage src={show.image?.medium} alt={show.name} />
             <div>
@@ -110,7 +108,7 @@ export default function ShowDetailPage() {
       ) : (
         <p>Carregando...</p>
       )}
-      <Footer/>
+      <Footer />
     </Container>
   );
 }

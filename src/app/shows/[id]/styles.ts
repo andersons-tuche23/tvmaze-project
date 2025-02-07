@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
@@ -20,6 +20,8 @@ export const Title = styled.h1`
   text-align: center;
   margin-bottom: 20px;
   line-height: 1.3;
+  cursor: pointer;
+
   @media (max-width: 768px) {
     font-size: 2rem;
   }
@@ -131,19 +133,3 @@ export const ErrorMessage = styled.div`
   width: 100%;
   max-width: 500px;
 `;
-
-export const BackButton = styled.button`
-  background-color: #e50914;
-  color: white;
-  padding: 10px 20px;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-bottom: 20px;
-  &:hover {
-    background-color: #b20710;
-  }
-`;
-
-

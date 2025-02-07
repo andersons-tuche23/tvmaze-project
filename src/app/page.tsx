@@ -85,22 +85,22 @@ export default function Home() {
       </SearchContainer>
       {error && <p style={{ color: "red" }}>{error}</p>}
       {displayedShows.length === 0 ? (
-  <p style={{ textAlign: "center", fontSize: "1.2rem", color: "#aaa" }}>
-    🎭 Série não encontrada.
-  </p>
-) : (
-  <ShowsGrid>
-    {displayedShows.map((show) => (
-      <ShowCard key={show.id}>
-        <LinkStyled href={`/shows/${show.id}`}>
-          <ShowImage src={show.image?.medium} alt={show.name} />
-          <ShowName>{show.name}</ShowName>
-        </LinkStyled>
-        <ShowRating>⭐ {show.rating?.average || "N/A"}</ShowRating>
-      </ShowCard>
-    ))}
-  </ShowsGrid>
-)}
+        <p style={{ textAlign: "center", fontSize: "1.2rem", color: "#aaa" }}>
+          🎭 Série não encontrada.
+        </p>
+      ) : (
+        <ShowsGrid>
+          {displayedShows.map((show) => (
+            <ShowCard key={show.id}>
+              <LinkStyled href={`/shows/${show.id}`}>
+                <ShowImage src={show.image?.medium} alt={show.name} />
+                <ShowName>{show.name}</ShowName>
+              </LinkStyled>
+              <ShowRating>⭐ {show.rating?.average || "N/A"}</ShowRating>
+            </ShowCard>
+          ))}
+        </ShowsGrid>
+      )}
       {totalPages > 1 && (
         <PaginationContainer>
           <Button
@@ -122,7 +122,7 @@ export default function Home() {
           </Button>
         </PaginationContainer>
       )}
-      <Footer/>
+      <Footer />
     </Container>
   );
 }
