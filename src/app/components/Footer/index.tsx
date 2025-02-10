@@ -7,6 +7,7 @@ import {
   Copyright,
   SocialContainer,
 } from "./styles";
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa"; 
 
 const Footer: React.FC = () => {
   return (
@@ -21,9 +22,15 @@ const Footer: React.FC = () => {
         <SocialContainer>
           <h3>Links Úteis</h3>
           <SocialLinks>
-            <Link href="https://www.facebook.com">Facebook</Link>
-            <Link href="https://www.instagram.com">Instagram</Link>
-            <Link href="https://www.twitter.com">Twitter</Link>
+            <Link href="https://www.facebook.com" target="_blank">
+              <FaFacebook /> Facebook
+            </Link>
+            <Link href="https://www.instagram.com" target="_blank">
+              <FaInstagram /> Instagram
+            </Link>
+            <Link href="https://www.twitter.com" target="_blank">
+              <FaTwitter /> Twitter
+            </Link>
           </SocialLinks>
         </SocialContainer>
       </FooterContent>

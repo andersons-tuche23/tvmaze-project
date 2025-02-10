@@ -12,9 +12,10 @@ export const FooterContainer = styled.footer`
 
 export const FooterContent = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  gap: 40px;
   margin-bottom: 20px;
   width: 100%;
 
@@ -25,11 +26,11 @@ export const FooterContent = styled.div`
   }
 
   div {
-    width: 30%;
+    width: 40%;
+    text-align: center;
 
     @media (max-width: 768px) {
       width: 100%;
-      text-align: center;
       margin-bottom: 20px;
     }
 
@@ -50,17 +51,26 @@ export const SocialContainer = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
+  width: 40%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const SocialLinks = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 15px;
-  flex-wrap: wrap;
+  gap: 10px;
   margin-top: 10px;
 `;
+
 export const Link = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 8px;
   color: #ccc;
   text-decoration: none;
   font-size: 1.1rem;
@@ -71,6 +81,10 @@ export const Link = styled.a`
     color: #ffffff;
     text-decoration: underline;
   }
+
+  svg {
+    font-size: 1.5rem;
+  }
 `;
 
 export const Copyright = styled.div`
@@ -79,4 +93,5 @@ export const Copyright = styled.div`
   color: #ccc;
   margin-top: 20px;
   text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 `;
